@@ -26,6 +26,7 @@ jobs:
           python -m pip install --upgrade pip
           # install your Python dependencies here
           npm install -g aws-cdk
+          source .venv/bin/activate
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@master
         with:
@@ -34,5 +35,5 @@ jobs:
           aws-region: "us-east-1"
       - name: Deploy to AWS
         run: cdk deploy --app="python3 ${PWD}/app.py" --require-approval=never
-      - name: Destroy stack
-        run: cdk destroy --app="python3 ${PWD}/app.py" --force
+      # - name: Destroy stack
+      #   run: cdk destroy --app="python3 ${PWD}/app.py" --force
