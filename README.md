@@ -1,5 +1,5 @@
 
-# Welcome to your CDK Python project!
+# Welcome to my Cloud Resume Challenge project!
 
 This is a blank project for CDK development with Python.
 
