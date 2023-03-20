@@ -1,13 +1,2 @@
 aws-cdk-lib==2.54.0
 constructs>=10.0.0,<11.0.0
-aws_cdk.aws_s3
-aws_cdk.aws_lambda
-aws_cdk.aws_cloudfront
-aws_cdk.aws_cloudfront_origins
-aws_cdk.aws_route53_patterns
-aws_cdk.aws_route53
-aws_cdk.aws_certificatemanager
-aws_cdk.aws_route53_targets
-aws_cdk.aws_dynamodb
-aws_cdk.aws_apigateway
-aws_cdk.aws_s3_deployment
