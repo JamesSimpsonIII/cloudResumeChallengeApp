@@ -27,6 +27,8 @@ jobs:
           # install your Python dependencies here
           npm install -g aws-cdk
           pip install --upgrade -r requirements.txt
+          export AWS_PAGER="" 
+          aws cloudfront create-invalidation --distribution-id E5FDMTLPHUTLTL --paths '/*'
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@master
         with:
