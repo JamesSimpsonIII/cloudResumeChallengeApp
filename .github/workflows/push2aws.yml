@@ -27,8 +27,6 @@ jobs:
           # install your Python dependencies here
           npm install -g aws-cdk
           pip install --upgrade -r requirements.txt
-          export AWS_PAGER="" 
-          aws cloudfront create-invalidation --distribution-id E5FDMTLPHUTLTL --paths '/*'
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@master
         with:
@@ -36,6 +34,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: "us-east-1"
       - name: Deploy to AWS
-        run: cdk deploy --require-approval=never
+        run: |
+          cdk deploy --require-approval=never
+          export AWS_PAGER="" 
+          aws cloudfront create-invalidation --distribution-id E5FDMTLPHUTLTL --paths '/*'
       # - name: Destroy stack
       #   run: cdk destroy --app="python3 ${PWD}/app.py" --force
